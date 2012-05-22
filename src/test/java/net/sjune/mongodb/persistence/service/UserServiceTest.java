@@ -18,8 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.mongodb.Mongo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/root-context.xml",
-								"file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml"})
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/root-context.xml","file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml"})
 public class UserServiceTest {
 
 	@Autowired
@@ -27,7 +26,7 @@ public class UserServiceTest {
 
 	@BeforeClass
 	public static void setup() throws Exception {
-		// test ½ÃÀÛÀü collection »èÁ¦
+		// test ì‹œìž‘ì „ collection ì œê±°
 		Mongo mongo = new Mongo("localhost");
 		MongoTemplate mongoTemplate = new MongoTemplate(mongo, "testdb");
 		mongoTemplate.dropCollection("testcollect");
