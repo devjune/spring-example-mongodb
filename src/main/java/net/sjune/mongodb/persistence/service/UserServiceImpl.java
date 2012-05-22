@@ -16,32 +16,32 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImpl implements UserService {
 	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 	
-    @Autowired
-    private UserDAO userDAO;
+	@Autowired
+	private UserDAO userDAO;
 	
-    @Override
+	@Override
 	public void insertUser(User user) {
-    	logger.info("userServiceImple.insertUser >>>" + user);
-    	userDAO.insert(user);
+		logger.info("userServiceImple.insertUser >>>" + user);
+		userDAO.insert(user);
 	}
 	
 	@Override
-    public List<User> getUsers() throws Exception {
-    	return userDAO.getUsers();
-    }
-
+	public List<User> getUsers() throws Exception {
+		return userDAO.getUsers();
+	}
+	
 	@Override
-    public User getUser(User user) throws Exception {
-    	logger.info("userServiceImple.getUser >>>" + user);
-        return (User) userDAO.getUser(user);
-    }
+	public User getUser(User user) throws Exception {
+		logger.info("userServiceImple.getUser >>>" + user);
+return (User)	 userDAO.getUser(user);
+	}
 
 	@Override
 	public boolean deleteUser(User user) throws Exception {
-    	logger.info("userServiceImple.delUser >>>" + user);
-    	try {
+		logger.info("userServiceImple.delUser >>>" + user);
+		try {
 			userDAO.deleteUser(user);
-    		return true;
+			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
@@ -50,9 +50,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User updateUser(User user) throws Exception {
-    	logger.info("userServiceImple.updateUser >>>" + user);
-    	
-    	return userDAO.updateUser(user);
+		logger.info("userServiceImple.updateUser >>>" + user);
+		
+		return userDAO.updateUser(user);
 		
 	}
 }
