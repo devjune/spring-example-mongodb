@@ -1,6 +1,10 @@
-/.git
-/.settings
-/build
-/target
-/.classpath
-/.project
+target/
+classes/
+lib/
+.settings
+.classpath
+.project
+.idea
+*.iml
+*.ipr
+.gitignore
